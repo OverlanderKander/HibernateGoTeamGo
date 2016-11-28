@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Add Book to List</title>
+<!--  <link rel="stylesheet" href="enrollform.css">-->
+</head>
+<body>
+	<h1>Add A Book!</h1>
+	
+	<form name="bookForm" action="../addBook" onsubmit="return addBook();" method="post">
+		Book Title:<input type="text" name="title" /> <br>
+		Author (Last name, First name):<input type="text" name="author"> <br>
+		Sales:<input type="int" name="sales"> <br>
+		Imprint:<input type="text" name="imprint"> <br> 
+		Publisher:<input type= "text" name="publisher"> <br>
+		Year Published:<input type="int" name="yearPublished"><br>
+		Genre:<input type="text" name="genre" ><br>
+		Status:<input type="int" name="status"> <br> 
+		Borrower: <input type="int" name= "borrower"> <br><br />
+		<input type="submit" value="Submit!">
+	</form>
+
+	<script>
+		function addBook() {
+			//console.log("validate form");
+			var title = document.forms["bookForm"]["title"].value;
+			var author = document.forms["bookForm"]["author"].value;
+			var sales = document.forms["bookForm"]["sales"].value;
+			var imprint = document.forms["bookForm"]["imprint"].value;
+			var publisher = document.forms["bookForm"]["publisher"].value;
+			var yearPublished = document.forms["bookForm"]["yearPublished"].value;
+			var genre = document.forms["bookForm"]["genre"].value;
+			var status = document.forms["bookForm"]["status"].value;
+			var borrower = document.forms["bookForm"]["borrower"].value;
+			
+			<!-- if (firstname == null || firstname == "") {
+				alert("Name field cannot be blank");
+				return false;
+			} else if (lastname == null || lastname == "") {
+				alert("Please enter a last name");
+				return false;
+			} else if (address == null || address == "") {
+				alert("Please enter a Street address");
+				return false;
+			} else if (city == null || city == "") {
+				alert("Please enter a city");
+				return false;
+			} else if (state == null || state == "") {
+				alert("Please enter a state");
+				return false;
+			} else if (zip == null || zip == "") {
+				alert("Please enter a zip");
+				return false;
+			} else if (phone == null || phone == "") {
+				alert("Please enter a phone number");
+				return false;
+			} else if (email == null || email == "") {
+				alert("Please enter an email address");
+				return false;
+			} else if (validateEmail(email) == false) {
+				alert("You have entered an invalid email address!");
+				return false;
+			} else if (validatePhonenumber(phone) == false) {
+				alert("You have entered an invalid phone number!");
+				return false;
+			} else if (validateAllnumeric(zip) == false) {
+				alert('ZIP code must have numeric characters only');
+				return false;
+			} else {
+				alert("Thank You!");
+			}
+		}
+
+		function validateEmail(x) {
+			var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(x);
+		}
+
+		function validatePhonenumber(input) {
+			var phonenum = /^\d{10}$/;
+			return phonenum.test(input);
+		}
+
+		function validateAllnumeric(uzip) {
+			var numbers = /^[0-9]+$/;
+			return numbers.test(uzip);
+		}-->
+	</script>
+
+</body>
+
+</html>
