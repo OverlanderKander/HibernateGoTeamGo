@@ -26,16 +26,24 @@ public class HomeController {
 	 */
 	@RequestMapping(value = "/addBook", method = RequestMethod.POST)
 	public String addBook(Model model, HttpServletRequest request) {
-
+		
+		Book newBook = new Book();
+		newBook.setTitle(request.getParameter("title"));
+		newBook.setAuthor(request.getParameter("author"));
+		newBook.setSales(Integer.parseInt(request.getParameter("sales")));
+		newBook.setPublisher(request.getParameter("publisher"));
+		
+		DAO.addBookToLibrary(newBook);
+		
 		model.addAttribute("bookTitle", request.getParameter("title"));
 		model.addAttribute("bookAuthor", request.getParameter("author"));
 		model.addAttribute("bookSales", request.getParameter("sales"));
-		model.addAttribute("bookImprint", request.getParameter("imprint"));
+		//model.addAttribute("bookImprint", request.getParameter("imprint"));
 		model.addAttribute("bookPublisher", request.getParameter("publisher"));
-		model.addAttribute("bookYearPublished", request.getParameter("yearPublished"));
+		/*model.addAttribute("bookYearPublished", request.getParameter("yearPublished"));
 		model.addAttribute("bookGenre", request.getParameter("genre"));
 		model.addAttribute("bookStatus", request.getParameter("status"));
-		model.addAttribute("bookBorrower", request.getParameter("borrower"));
+		model.addAttribute("bookBorrower", request.getParameter("borrower"));*/
 		return "home";
 	}
 

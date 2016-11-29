@@ -8,10 +8,10 @@
 	<h1>You added a book!</h1>
 
 	<p>
-		The book you have added is ${bookTitle}, by ${bookAuthor} genre:
-		${bookGenre} which sold ${bookSales} copies published in
-		${bookYearPublished} by ${bookImprint} a division of ${bookPublisher}.<br>
-		The status is ${bookStatus} and current borrower is ${bookBorrower}.
+		The book you have added is ${bookTitle}, by ${bookAuthor} 
+		which sold ${bookSales} copies published 
+		 by ${bookPublisher}.<br>
+		
 	</p>
 
 
