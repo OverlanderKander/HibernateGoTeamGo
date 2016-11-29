@@ -18,17 +18,17 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class HomeController {
-	
+
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
+
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
 	@RequestMapping(value = "/addBook", method = RequestMethod.POST)
 	public String addBook(Model model, HttpServletRequest request) {
-		
+
 		model.addAttribute("bookTitle", request.getParameter("title"));
-		model.addAttribute("bookAuthor",  request.getParameter("author"));
+		model.addAttribute("bookAuthor", request.getParameter("author"));
 		model.addAttribute("bookSales", request.getParameter("sales"));
 		model.addAttribute("bookImprint", request.getParameter("imprint"));
 		model.addAttribute("bookPublisher", request.getParameter("publisher"));
@@ -36,8 +36,7 @@ public class HomeController {
 		model.addAttribute("bookGenre", request.getParameter("genre"));
 		model.addAttribute("bookStatus", request.getParameter("status"));
 		model.addAttribute("bookBorrower", request.getParameter("borrower"));
-		
 		return "home";
 	}
-	
+
 }

@@ -1,6 +1,5 @@
 package com.kander.hibernatebegins;
 
-
 import java.util.List;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -26,17 +25,26 @@ public class DAO {
 		factory = configuration.buildSessionFactory(serviceRegistry);
 	}
 
-//	public static int addProduct(Product p) {
-//		if (factory == null)
-//			setupFactory();
-//		Session hibernateSession = factory.openSession();
-//		hibernateSession.getTransaction().begin();
-//		// save this specific record
-//		int i = (Integer) hibernateSession.save(p);
-//		hibernateSession.getTransaction().commit();
-//		hibernateSession.close();
-//		return i;
-//	}
+	public static int addBookToLibrary(Book b) {
+		if (factory == null)
+			setupFactory();
+		Session hibernateSession = factory.openSession();
+		hibernateSession.getTransaction().begin();
+		int i = (Integer) hibernateSession.save(b);
+		hibernateSession.getTransaction().commit();
+		hibernateSession.close();
+		return i;
+	}
+	
+	
+		
+		
+//		String addANewBook = "INSERT INTO Library(bookTitle, bookAuthor, bookSales, bookImprint, bookPublisher, bookYearPublished, bookGenre, bookStatus, bookBorrower)";
+
+		// + " SELECT * FROM Library";
+//		Query query = hibernateSession.createQuery(addANewBook);
+//		int result = query.executeUpdate();
+//		System.out.println("Rows affected: " + result);
 
 	public static List<Book> getAllBooks() {
 		if (factory == null)

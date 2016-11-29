@@ -8,7 +8,7 @@
 <body>
 	<h1>Add A Book!</h1>
 	
-	<form name="bookForm" action="../addBook" onsubmit="return addBook();" method="post">
+	<form name="bookForm" action="../addBook" onsubmit="return addUserBook();" method="post">
 		Book Title:<input type="text" name="title" /> <br>
 		Author (Last name, First name):<input type="text" name="author"> <br>
 		Sales:<input type="int" name="sales"> <br>
@@ -22,7 +22,7 @@
 	</form>
 
 	<script>
-		function addBook() {
+		function addUserBook() {
 			//console.log("validate form");
 			var title = document.forms["bookForm"]["title"].value;
 			var author = document.forms["bookForm"]["author"].value;
