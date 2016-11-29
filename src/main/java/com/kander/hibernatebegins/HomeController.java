@@ -4,6 +4,8 @@ import java.text.DateFormat;
 import java.util.Date;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
@@ -22,16 +24,18 @@ public class HomeController {
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 */
-	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
+	@RequestMapping(value = "/addBook", method = RequestMethod.POST)
+	public String addBook(Model model, HttpServletRequest request) {
 		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
+		model.addAttribute("bookTitle", request.getParameter("title"));
+		model.addAttribute("bookAuthor",  request.getParameter("author"));
+		model.addAttribute("bookSales", request.getParameter("sales"));
+		model.addAttribute("bookImprint", request.getParameter("imprint"));
+		model.addAttribute("bookPublisher", request.getParameter("publisher"));
+		model.addAttribute("bookYearPublished", request.getParameter("yearPublished"));
+		model.addAttribute("bookGenre", request.getParameter("genre"));
+		model.addAttribute("bookStatus", request.getParameter("status"));
+		model.addAttribute("bookBorrower", request.getParameter("borrower"));
 		
 		return "home";
 	}
