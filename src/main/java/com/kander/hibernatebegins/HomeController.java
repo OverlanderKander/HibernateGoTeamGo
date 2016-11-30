@@ -46,5 +46,4 @@ public class HomeController {
 		model.addAttribute("bookBorrower", request.getParameter("borrower"));*/
 		return "home";
 	}
-
 }

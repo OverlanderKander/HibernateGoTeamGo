@@ -36,6 +36,17 @@ public class DAO {
 		return i;
 	}
 	
+	public static int deleteBookFromLibrary(Book b) {
+		if (factory == null)
+			setupFactory();
+		Session hibernateSession = factory.openSession();
+		hibernateSession.getTransaction().begin();
+		int i = (Integer) hibernateSession.save(b);
+		hibernateSession.getTransaction().commit();
+		hibernateSession.close();
+		return i;
+	}
+	
 	
 		
 		
