@@ -87,7 +87,24 @@ public class DAO {
 		return books;
 	}
 
-	public static void deleteBook(Integer Rank) {
+	public static Book deleteBook(Integer Rank) {
+		if (factory == null)
+			setupFactory();
+		Session hibernateSession = factory.openSession();
+		hibernateSession.getTransaction().begin();
+		Book oldBook = (Book) hibernateSession.get(Book.class, Rank);
+		hibernateSession.delete(oldBook);
+		hibernateSession.getTransaction().commit();
+		hibernateSession.close();
+		return oldBook;
+	}	
+
+	
+	
+/*	
+	
+	
+	public static Book deleteBook(Integer Rank) {
 		Session hibernateSession = factory.openSession();
 		Transaction trans = null;
 		try {
@@ -95,13 +112,15 @@ public class DAO {
 			Book book = (Book) hibernateSession.get(Book.class, Rank);
 			hibernateSession.delete(book);
 			trans.commit();
+			return book;
 		} catch (HibernateException e) {
 			if (trans != null)
 				trans.rollback();
 			e.printStackTrace();
 		} finally {
 			hibernateSession.close();
+
 		}
-	}
+	} */
 
 }

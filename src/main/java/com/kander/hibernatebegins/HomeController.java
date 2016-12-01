@@ -52,14 +52,11 @@ public class HomeController {
 
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
 	public String delete(Model model, @RequestParam(value = "rank") int rank) {
+		
+		Book b = DAO.deleteBook(rank);
 
-		DAO.deleteBook(rank);
-		// get the list of books from DAO
-		List<Book> books = DAO.getAllBooks();
-
-		// add this list to the model
-		model.addAttribute("bookList", books);
-		return "list";
+		model.addAttribute("title", b.getTitle());
+		model.addAttribute("author", b.getAuthor());
+		return "bookRemoved";
 	}
-
 }
