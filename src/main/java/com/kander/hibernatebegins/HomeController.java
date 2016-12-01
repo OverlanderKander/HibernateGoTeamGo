@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 
-	@RequestMapping(value = "../addBook", method = RequestMethod.POST)
+	@RequestMapping(value = "/addBook", method = RequestMethod.POST)
 	public String addBook(Model model, HttpServletRequest request) {
 		
 		Book newBook = new Book();
