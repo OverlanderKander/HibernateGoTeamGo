@@ -17,8 +17,8 @@
 
 	<form name="bookForm" action="../addBook"
 		onsubmit="return addUserBook();" method="post">
-		Book Title:<input type="text" name="title" /> <br> 
-		Author (Last name, First name):<input type="text" name="author"> <br>
+		Book Title:<input type="text" name="title" /> <br> Author (Last
+		name, First name):<input type="text" name="author"> <br>
 		Sales:<input type="text" name="sales"> <br>
 		<!--Imprint:<input type="text" name="imprint"> <br> -->
 		Publisher:<input type="text" name="publisher"> <br>
@@ -26,25 +26,8 @@
 		Genre:<input type="text" name="genre" ><br>
 		Status:<input type="int" name="status"> <br> 
 		Borrower: <input type="int" name= "borrower"> -->
-		<br>
-		<br /> <input type="submit" value="Submit!">
+		<br> <br /> <input type="submit" value="Submit!">
 	</form>
-	
-		<script>
-		function addUserBook() {
-			//console.log("validate form");
-			var title = document.forms["bookForm"]["title"].value;
-			var author = document.forms["bookForm"]["author"].value;
-			var sales = document.forms["bookForm"]["sales"].value;
-			//var imprint = document.forms["bookForm"]["imprint"].value;
-			var publisher = document.forms["bookForm"]["publisher"].value;
-			<!--
-			var yearPublished = document.forms["bookForm"]["yearPublished"].value;
-			var genre = document.forms["bookForm"]["genre"].value;
-			var status = document.forms["bookForm"]["status"].value;
-			var borrower = document.forms["bookForm"]["borrower"].value; 
-			-->
-	</script>
 
 </body>
 </html>
