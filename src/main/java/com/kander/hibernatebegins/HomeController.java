@@ -59,4 +59,21 @@ public class HomeController {
 		model.addAttribute("author", b.getAuthor());
 		return "bookRemoved";
 	}
+	
+	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	public String home(Model model) {
+
+		return "home";
+	}	
+	
+	@RequestMapping(value = "/addBook", method = RequestMethod.GET)
+	public String addBook(Model model) {
+
+		return "addBook";
+	}		
+	
+	
+	
+	
+	
 }

@@ -11,11 +11,19 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Book Added</title>
 </head>
+
+<center>
 	<h1>You added a book!</h1>
 	<h2>Book successfully added:</h2>
-	<p>	${bookTitle} <br>
-		by ${bookAuthor} <br> 
+	<p>
+		${bookTitle} <br> by ${bookAuthor} <br>
 	</p>
+</center>
+
+<div style="text-align: center">
+	<a href="home">Home</a> | <a href="list">View Library</a> | 
+	<a href="addBook">Add A Book</a>
+</div>
 
 </body>
 </html>
