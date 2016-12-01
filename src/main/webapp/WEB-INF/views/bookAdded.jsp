@@ -11,12 +11,10 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Book Added</title>
 </head>
-	<script>addBookToLibrary</script>
-<body>
-	<h1>New Book Added To Library</h1>
-	<h2>You have added a new book</h2>
-	<p> ${book.title}<br> 
-	Author: ${author} 
+	<h1>You added a book!</h1>
+	<h2>Book successfully added:</h2>
+	<p>	${bookTitle} <br>
+		by ${bookAuthor} <br> 
 	</p>
 
 </body>
